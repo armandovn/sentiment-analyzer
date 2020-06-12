@@ -9,6 +9,7 @@ Libraries
 - sklearn
 
 To install the libraries we need execute:
+
     pip install <library_name>
 
 NTLK dependencies:
@@ -16,3 +17,7 @@ NTLK dependencies:
 - twitter_samples
 - wordnet
 - punkt
+
+To install the dependencies execute the python shell and write:
+- import nltk
+- nltk.download('<dependence_name>')
