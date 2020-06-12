@@ -9,7 +9,12 @@ from nltk.corpus import twitter_samples
 from nltk import FreqDist
 # Import sklearn for clasification reports
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+# Import sklearn.tokenize to tokenize the strings
 from nltk.tokenize import word_tokenize
+
+# Create the flask instace to execute the page
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'f898a7a6b03489d08a37f46aac83b568'
 
 # Create the instance for sentiment Analisis
 sentiment_analysis = SentimentAnalysis()
@@ -60,11 +65,6 @@ all_words = sentiment_analysis.getAllWords(positive_cleaned_tokens_list + negati
 freq_dist_pos = FreqDist(all_words)
 common_words = freq_dist_pos.most_common(20)
 print(type(common_words))
-
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'f898a7a6b03489d08a37f46aac83b568'
-review = ''
 
 @app.route("/")
 @app.route("/home")
