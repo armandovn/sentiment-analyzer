@@ -1,0 +1,7 @@
+{% extends "layout.html" %} {% block content %}
+<br><br>
+<h2>The tweets that will to analize are:</h2>
+{% for tweet in tweets %}
+    <p>{{tweet}}</p>
+{% endfor %}
+{% endblock %}

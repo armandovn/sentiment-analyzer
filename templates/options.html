@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="POST" action="/result_review">
+  <h2>Analize your custom review.</h2>
+  <p>The first option is analyze your custom review, the steps are:</p>
+  <p>1- Create your costum review, about one company, movie o whatever you want.</p>
+  <p>2- Copy and paste your costum review in the input field.</p>
+  <p>3- Send the form and wait to the page response with the datail of analisis.</p>
+    <div class="form-group">
+      <label for="review">Your review</label>
+      <input type="text" class="form-control" id="review" name="review" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">Text you want to analize</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Send review</button>
+</form>
+<br>
+<form method="POST" action="/twitter_search">
+  <h2>Make a search on twitter.</h2>
+  <p>In this option the program will make a search on Twitter about one topic an return a positive or negative clasification.</p>
+  <p>The steps to following are:</p>
+  <p>1- Think one tipic (movie, company, social problem or whatever you want) and write it on the input field.</p>
+  <p>2- Send the form and wait to the page response with the datail of analisis.</p>
+    <div class="form-group">
+      <label for="topic">Your topic</label>
+      <input type="text" class="form-control" id="topic" name="topic" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">THe topic you want to analize</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Do the seach</button>
+</form>
+{% endblock %}

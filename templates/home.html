@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block content %}
+<h1>Sentiment Analisis</h1>
+<br>
+<h2>Sumary</h2>
+<br>
+<p>This is the final project of subject "Analisís Inteligente de textos"</p>
+<p>This is project is a text sentiment analyzer. You can put directly your comment, review or any text you want to make a analisis</p>
+<div style="width: 75%; margin: auto; max-height: 390px;">
+    <img style="width: 100%;" src="https://miro.medium.com/max/939/1*35pb5PlxcSljWGiEBIo7jQ.png" alt="NLP">
+</div>
+<h2>About this project</h2>
+<br>
+<p>The project was building on python languaje and use the Naive Bayes classifier that is based on the Bayes Theorem.</p>
+<br>
+<h3>How does the program work?</h3>
+<br>
+<p>The pragram was made with python languaje and use the NLTK librery to make the text analisis</p>
+<p>The analizer was training ann testing with many review tho have an accuracy_score of:</p>
+<p>{{accuracy_score}}</p>
+<br>
+<p>This accuracy score was posible by training the model with 10,000 different review.</p>
+<p>If you want to know more about how the program works i put the next link to understand well the program function (The article is on Spanish):</p>
+<a href="https://docs.google.com/document/d/1y2tYsYGIhGw4BVCYeYlU6R67bx2aLruqI5jqsDz8uV0/edit?usp=sharing" target="_blank">Determinación del grado de satisfacción de los clientes de una empresa mediante el análisis inteligente de textos.</a>
+<br>
+<p>In the next line you can check a report of the precision, recall and f1-score obout this analizer:</p>
+<br>
+<div>{{classification_report}}</div>
+<br>
+<p>In the next line you can check the confusion matrix:</p>
+<br>
+{% for row in confusion_matrix%}
+<div>{{row}}</div>
+{% endfor %}
+<br>
+<p>The next line show the common words in the Train Data</p>
+<br>
+<div>{{common_words}}</div>
+{% endblock %}

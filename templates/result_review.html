@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block content %}
+<br><br>
+<h2>Your review is:</h2>
+<p>{{review}}</p>
+<p>Frist step: Tokenize the review:</p>
+<p>{{review_tokens}}</p>
+<p>Second step: Clear tokens</p>
+<p>{{review_filter_tokens}}</p>
+<p>Third step: Normilze tokens</p>
+<p>{{review_normilze_tokens}}</p>
+<p>The result of the analisis is:</p>
+<p>Your review was clasified as: {{clasification_result}}</p>
+{% endblock %}
