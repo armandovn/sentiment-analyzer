@@ -1,6 +1,12 @@
 Requeriments:
 - Python 3.7 +
 
+To execute the project we need to create a new virtual env in the project folder:
+- python -m venv venv
+
+After that run the venv with and install the libraries:
+- . venv/bin/activate
+
 Libraries
 - nltk
 - pandas
@@ -21,3 +27,6 @@ NTLK dependencies:
 To install the dependencies execute the python shell and write:
 - import nltk
 - nltk.download('<dependence_name>')
+
+To execute the app:
+- python web_app.py 

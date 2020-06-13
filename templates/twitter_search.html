@@ -4,4 +4,11 @@
 {% for tweet in tweets %}
     <p>{{tweet}}</p>
 {% endfor %}
+<p>The next line shows the result of analysis for each tweet:</p>
+{% for result in analize_result %}
+    <p>{{result}}</p>
+{% endfor %}
+<br>
+<p>The general perception of the subject is::</p>
+<p style="font-weight: 700; font-size: 18px;">{{common_words}}</p>
 {% endblock %}

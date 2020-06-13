@@ -34,5 +34,7 @@
 <br>
 <p>The next line shows the common words in the Train Data</p>
 <br>
-<div>{{common_words}}</div>
+{% for word in common_words %}
+<div>{{word}}</div>
+{% endfor %}
 {% endblock %}

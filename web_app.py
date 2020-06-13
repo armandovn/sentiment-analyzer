@@ -56,15 +56,11 @@ for expression in test_data:
 df = pd.DataFrame(predict_frame, columns=['Real','Predited'])
 
 accuracy_score = accuracy_score(df['Real'],df['Predited'])
-print(type(accuracy_score))
 classification_report = classification_report(df['Real'],df['Predited'])
-print(type(classification_report))
 confusion_matrix = confusion_matrix(df['Real'],df['Predited'])
-print(type(confusion_matrix))
 all_words = sentiment_analysis.getAllWords(positive_cleaned_tokens_list + negative_cleaned_tokens_list)
 freq_dist_pos = FreqDist(all_words)
 common_words = freq_dist_pos.most_common(20)
-print(type(common_words))
 
 @app.route("/")
 @app.route("/home")
@@ -90,7 +86,12 @@ def twitter_search():
   if request.method == 'POST':
     topic = request.form['topic']
     tweets = twitterSearch.makeASearch(topic)
-    return render_template('twitter_search.html', title='Twitter Search', tweets=tweets)
+    analize_result = []
+    for tweet in tweets:
+      analize_result.append(classifier.classify(dict([token, True] for token in sentiment_analysis.normalizeTokens(word_tokenize(tweet)))))
+    freq_dist_pos = FreqDist(analize_result)
+    common_words = freq_dist_pos.most_common(1)
+    return render_template('twitter_search.html', title='Twitter Search', tweets=tweets, analize_result=analize_result, common_words=common_words)
 
 @app.route("/about")
 def about():
